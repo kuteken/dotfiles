@@ -1,0 +1,20 @@
+[user]
+	name = kuteken
+	email = kuteken@gmail.com
+[color]
+	ui = auto
+[push]
+	default = tracking
+[core]
+	excludesfile = ~/.gitignore
+	autocrlf = input
+[alias]
+	st = status
+	co = checkout
+	ft = fetch
+	ad = add
+	br = branch
+	ls = log --stat
+	lp = log -p
+	lg = log --graph --all --decorate
+
