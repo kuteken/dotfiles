@@ -24,6 +24,11 @@ inoremap <C-v> var_dump();<Left><Left>
 inoremap <silent> jj <ESC>
 nnoremap Y y$
 
+"set encoding
+set encoding=utf-8
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileformats=unix,dos,mac
+
 "========================================
 "Syntax
 "========================================
