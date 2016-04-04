@@ -49,6 +49,13 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundleLazy 'vim-scripts/javacomplete', {
+  \   'build': {
+  \       'cygwin': 'javac autoload/Reflection.java',
+  \       'mac': 'javac autoload/Reflection.java',
+  \       'unix': 'javac autoload/Reflection.java',
+  \   },
+  \}
 " Coding
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
