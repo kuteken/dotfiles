@@ -56,6 +56,7 @@ brew cask install vagrant
 brew cask install dockertoolbox
 
 brew cask install java
+brew install nkf
 
 ## Network
 brew install dnsmasq
