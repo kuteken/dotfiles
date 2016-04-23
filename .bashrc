@@ -1,3 +1,6 @@
+# for osX
+export PATH=$PATH:/usr/local/mysql/bin/
+
 # homebrew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -30,3 +33,6 @@ HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
 # alias
 alias g='git'
 alias be='bundle exec'
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "~/.gvm/bin/gvm-init.sh" ]] && source "~/.gvm/bin/gvm-init.sh"
