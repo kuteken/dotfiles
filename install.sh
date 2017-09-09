@@ -8,21 +8,21 @@ echo 'brew updating...'
 brew update
 
 #========================================
-# Initial set up
+# Initial set up to install Apps
 #========================================
 
-read -r -p "Initial set up? [y/N] " response
+read -r -p "Initial set up to install Apps? [y/N] " response
 case $response in
     y|Y])
         echo 'Input password for Xcode license, pip and awscli'
+        # Git
+        brew install git
 
         # Xcode CLT
         xcode-select --install
         sudo xcodebuild -license
 
         # Add Package manager
-        ## homebrew
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         ## AWS CLI
         sudo easy_install pip
         sudo pip install awscli --upgrade --ignore-installed six # For OSX 10.11
@@ -40,56 +40,66 @@ esac
 # Install Applications with brew and caskroom
 #========================================
 
-## Develop
-brew cask install iterm2
-brew install macvim --with-lua --with-cscope --override-system-vim
-brew cask install sourcetree
-brew cask install sequel-pro
-brew cask install atom
-brew cask install sublime-text
+read -r -p "Initial Applications with brew and caskroom? [y/N] " response
+case $response in
+    y|Y])
+        ## Develop
+        brew install wget
+        brew install tree
+        brew install imagemagick
+        brew install nkf
+        brew install homebrew/php/composer
 
-brew install ansible
-brew install fabric
-brew cask install chefdk
-brew cask install virtualbox
-brew cask install vagrant
-brew cask install dockertoolbox
+        brew cask install iterm2
+        brew cask install sourcetree
+        brew cask install sequel-pro
+        brew cask install atom
+        brew cask install sublime-text
+        brew cask install mysqlworkbench
 
-brew cask install java
-brew install nkf
+        brew install ansible
+        brew install fabric
+        brew cask install chefdk
+        brew cask install virtualbox
+        brew cask install vagrant
+        brew cask install dockertoolbox
 
-## Network
-brew install dnsmasq
+        brew cask install java
 
-## Media
-brew cask install imageoptim
-brew cask install vlc
-brew cask install google-nik-collection
+        ## Network
+        brew install dnsmasq
 
-## Utility
-brew cask install google-japanese-ime
+        ## Media
+        brew cask install imageoptim
+        brew cask install vlc
+        brew cask install google-nik-collection
 
-brew cask install google-chrome
-brew cask install evernote
-brew cask install alfred
-brew cask install the-unarchiver
-brew cask install android-file-transfer
-brew cask install gyazo
-brew cask install shupapan
-brew cask install appcleaner
-brew cask install cheatsheet
-brew cask install flux
-brew cask install caffeine
-brew cask install shady
-brew cask install karabiner
+        ## Utility
+        brew cask install google-japanese-ime
 
-## Communication
-brew cask install slack
-brew cask install skype
-brew cask install limechat
+        brew cask install google-chrome
+        brew cask install evernote
+        brew cask install the-unarchiver
+        brew cask install android-file-transfer
+        brew cask install gyazo
+        brew cask install appcleaner
+        brew cask install flux
+        brew cask install caffeine
+        brew cask install shady
+        brew cask install karabiner
 
-## linkapps
-brew linkapps
+        ## Communication
+        brew cask install slack
+        brew cask install skype
+        brew cask install limechat
+
+        ## linkapps
+        brew linkapps
+
+        ## Chef
+        chef gem install knife-solo knife-zero
+        ;;
+esac
 
 #========================================
 # Install Applications from Appstore
@@ -100,7 +110,7 @@ case $response in
     y|Y])
         mas install 539883307 # LINE
         mas install 497799835 # Xcode
-        mas install 928494006 # Pop hub
+        mas install 907364780 # Pomodoro one
         ;;
 esac
 

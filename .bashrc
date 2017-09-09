@@ -1,5 +1,7 @@
 # for osX
 export PATH=$PATH:/usr/local/mysql/bin/
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # homebrew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -8,6 +10,12 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init -)"
+fi
+
+# Virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Git
@@ -31,6 +39,7 @@ HISTIGNORE=history
 HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
 
 # alias
+alias vi='vim'
 alias g='git'
 alias be='bundle exec'
 
