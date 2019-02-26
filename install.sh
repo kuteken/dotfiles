@@ -44,6 +44,7 @@ read -r -p "Initial Applications with brew and caskroom? [y/N] " response
 case $response in
     y|Y])
         ## Develop
+        brew install vim
         brew install wget
         brew install tree
         brew install imagemagick
@@ -59,10 +60,9 @@ case $response in
 
         brew install ansible
         brew install fabric
-        brew cask install chefdk
         brew cask install virtualbox
         brew cask install vagrant
-        brew cask install dockertoolbox
+        brew cask install docker
 
         brew cask install java
 
@@ -91,10 +91,6 @@ case $response in
         ## Communication
         brew cask install slack
         brew cask install skype
-        brew cask install limechat
-
-        ## linkapps
-        brew linkapps
 
         ## Chef
         chef gem install knife-solo knife-zero
@@ -110,7 +106,6 @@ case $response in
     y|Y])
         mas install 539883307 # LINE
         mas install 497799835 # Xcode
-        mas install 907364780 # Pomodoro one
         ;;
 esac
 
